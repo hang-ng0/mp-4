@@ -41,7 +41,7 @@ export default function Header(){
             <StyledNav>
                 <StyledUl>
                     <StyledLi><StyledLink href="/">Home</StyledLink></StyledLi>
-                    <StyledLi><StyledLink href="/objects">Object</StyledLink></StyledLi>
+                    {/*<StyledLi><StyledLink href="/objects">Object</StyledLink></StyledLi>*/}
                 </StyledUl>
             </StyledNav>
         </StyledHeader>
