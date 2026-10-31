@@ -16,6 +16,7 @@ const StyledIndividualDiv = styled.div`
 const StyledImage = styled.img`
     width: 70%;
     height: auto;
+    margin: auto;
     
 `;
 
@@ -25,10 +26,15 @@ const StyledDiv = styled.div`
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    text-align: center;
 `;
 
 const StyledP = styled.p`
-    padding: 0%;
+    padding: 1%;
+`;
+
+const StyledHeader = styled.h1`
+    padding: 1%;
 `;
 
 
@@ -40,10 +46,10 @@ export default async function ExhibitionData(){
             <Header/>
             <StyledDiv>{data.map((exhibition: any) => (
                 <StyledIndividualDiv key={exhibition.id}>
-                    <h1>{exhibition.title}</h1>
+                    <StyledHeader>{exhibition.title}</StyledHeader>
                     <StyledImage src={exhibition.primaryimageurl} alt={exhibition.title}/>
                     {/*A lot of the data doesn't have images*/}
-                    <h4>{exhibition.datebegin} - {exhibition.dateend}</h4>
+                    <StyledHeader>{exhibition.datebegin} - {exhibition.dateend}</StyledHeader>
                     <StyledP>{exhibition.description}</StyledP>
                     <StyledP>{exhibition.classification}</StyledP>
                     <StyledP>{exhibition.medium}</StyledP>
