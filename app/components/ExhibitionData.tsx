@@ -44,17 +44,19 @@ export default async function ExhibitionData(){
     return(
         <>
             <Header/>
-            <StyledDiv>{data.map((exhibition: any) => (
+            <StyledDiv>{data.map((exhibition: any) => exhibition.title && exhibition.primaryimageurl ? (
+                // wanted to have a conditional statement so that the data doesn't look like it's missing things
                 <StyledIndividualDiv key={exhibition.id}>
                     <StyledHeader>{exhibition.title}</StyledHeader>
                     <StyledImage src={exhibition.primaryimageurl} alt={exhibition.title}/>
                     {/*A lot of the data doesn't have images*/}
                     <StyledHeader>{exhibition.datebegin} - {exhibition.dateend}</StyledHeader>
-                    <StyledP>{exhibition.description}</StyledP>
-                    <StyledP>{exhibition.classification}</StyledP>
+                    <StyledP>Classification: {exhibition.classification}</StyledP>
                     <StyledP>{exhibition.medium}</StyledP>
+                    <StyledP>{exhibition.description}</StyledP>
                 </StyledIndividualDiv>
-            ))}</StyledDiv>
+            ) : null
+            )}</StyledDiv>
         </>
     )
 }

@@ -28,7 +28,7 @@ export default function Home(){
         <StyledHome>
             <StyledH1>Harvard Art Museum API</StyledH1>
             <h2>CS303 MP4 Project</h2>
-            <Link href="/objects"><StyledButton>Look at Objects</StyledButton></Link>
+            <Link href="/objects"><StyledButton>Explore Objects</StyledButton></Link>
         </StyledHome>
     )
 }

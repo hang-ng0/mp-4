@@ -6,7 +6,7 @@ export async function fetchData(){
     }
     try{
         const response = await fetch(
-            `https://api.harvardartmuseums.org/object?&size=10&apikey=${apiKey}`, //url
+            `https://api.harvardartmuseums.org/object?&size=25&apikey=${apiKey}`, //url
         );
         if (!response.ok) {
             throw new Error("Failed to fetch data");
