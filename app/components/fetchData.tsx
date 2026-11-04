@@ -8,6 +8,9 @@ export async function fetchData(){
         const response = await fetch(
             `https://api.harvardartmuseums.org/object?&size=25&apikey=${apiKey}`, //url
         );
+        if (response.status === 429){ //research this specific http status code on google for api handling (specifically http 429 is the too many request status code)
+            throw new Error("Exceeded the API key limit.");
+        }
         if (!response.ok) {
             throw new Error("Failed to fetch data");
         }
